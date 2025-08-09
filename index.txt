@@ -1,0 +1,279 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy Clone</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fff;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #fc8019;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #333;
+        }
+
+        .login-btn {
+            background: #fff;
+            color: #fc8019;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero {
+            background: #fff4e6;
+            padding-top: 150px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            width: 300px;
+            padding: 12px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .search-btn {
+            background: #fc8019;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .restaurant-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 250px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #333;
+            color: #fff;
+            margin-top: 30px;
+        }
+
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .popup-content input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .popup-content button {
+            background: #fc8019;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .close-btn {
+            background: #ccc;
+            color: #000;
+        }
+
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .restaurant-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-box {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">Swiggy</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#restaurants">Restaurants</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><span class="login-btn" onclick="openPopup()">Login</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section id="home" class="hero">
+        <h1>Order food from your favorite restaurants</h1>
+        <p>Fast delivery at your doorstep</p>
+        <input type="text" placeholder="Enter your delivery location" class="search-box">
+        <button class="search-btn">Find Food</button>
+    </section>
+
+
+    <section id="restaurants">
+        <h2>Popular Restaurants</h2>
+        <div class="restaurant-cards">
+            <div class="card">
+                <img src="DomiPizza Image.PNG" alt="Restaurant" width="200" height="200">
+                <h3>Domino's Pizza</h3>
+                <p>Fast Food, Pizza</p>
+            </div>
+            <div class="card">
+                <img src="KFC-Image.PNG" alt="Restaurant" width="200" height="200">
+                <h3>KFC</h3>
+                <p>Burgers, Fried Chicken</p>
+            </div>
+            <div class="card">
+                <img src="biryani-image.PNG" alt="Restaurant" width="200" height="200">
+                <h3>Biryani House</h3>
+                <p>Biryani, North Indian</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="offers">
+        <h2>Exciting Offers</h2>
+        <p>Flat 50% off on your first order! Use code: SWIGGY50</p>
+    </section>
+
+   
+    <section id="help">
+        <h2>Help & Support</h2>
+        <p>Need assistance? Contact us at support@swiggy.com</p>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2025 Swiggy Clone. All rights reserved.</p>
+    </footer>
+
+  
+    <div class="popup" id="loginPopup">
+        <div class="popup-content">
+            <h2>Login</h2>
+            <input type="text" placeholder="Enter Phone or Email">
+            <input type="password" placeholder="Enter Password">
+            <button onclick="closePopup()">Login</button>
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+  
+    <script>
+        function openPopup() {
+            document.getElementById('loginPopup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('loginPopup').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
