@@ -194,6 +194,7 @@
 
     <h1>Hello Customers</h1>
 <h1>50% discount</h1>
+<h3>100% discount</h3>
     <header>
         <nav class="navbar">
             <div class="logo">Swiggy</div>
@@ -278,5 +279,6 @@
 
 </body>
 </html>
+
 
 
